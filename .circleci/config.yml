@@ -19,6 +19,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+  save-tests:
+    docker:
+      - image: cimg/base:stable
+    steps: 
+      - gradle/collect_test_results
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -30,3 +35,4 @@ workflows:
   checkout-build-test:
     jobs:
       - gradle/test
+      - save-tests
