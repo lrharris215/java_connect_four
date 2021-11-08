@@ -22,7 +22,9 @@ jobs:
   save-tests:
     docker:
       - image: cimg/base:stable
-    steps: 
+    steps:
+      - checkout
+      - gradle/test
       - gradle/collect_test_results
 
 # Invoke jobs via workflows
@@ -34,5 +36,4 @@ workflows:
 
   checkout-build-test:
     jobs:
-      - gradle/test
       - save-tests
