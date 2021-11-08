@@ -52,6 +52,9 @@ out/
 
 # Package Files #
 *.jar
+# Not the gradle wrapper though!!!
+!gradle/wrapper/gradle-wrapper.jar
+
 *.war
 *.nar
 *.ear
