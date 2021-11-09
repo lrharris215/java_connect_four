@@ -6,6 +6,7 @@ public class Board {
     public Board(){
         // Standard connect-four is 6x7
         grid = new Discable[6][7];
+        setUpGrid();
     }
 
     // methods
