@@ -12,11 +12,18 @@ public class Board {
 
     public void addDisc(Disc disc, int row, int col){
         // adds a disc to a location in the grid.
+        // just realized this is not how the game is played. Will fix later when I get to the player adds token step.
+
         grid[row][col] = disc;
     }
 
     public void setUpGrid() {
-
+        // initial blank state of the board.
+       for(int i = 0; i < grid.length; i++){
+           for(int j = 0; j < grid[0].length; j++){
+               grid[i][j] = NullDisc.getNullDisc();
+           }
+       }
     }
 
 }

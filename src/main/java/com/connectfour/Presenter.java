@@ -12,13 +12,10 @@ public class Presenter {
             }
             System.out.print("\n");
         }
-        System.out.print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
+        System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
     }
 
     public static void printDisc(Disc disc){
-        if (disc == null){
-            return;
-        }
         System.out.print(disc.symbol);
     }
 
