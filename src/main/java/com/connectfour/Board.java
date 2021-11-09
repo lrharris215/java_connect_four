@@ -2,15 +2,15 @@ package com.connectfour;
 
 public class Board {
     // Board should consist of a matrix of Discs.
-    Disc[][] grid;
+    Discable[][] grid;
     public Board(){
         // Standard connect-four is 6x7
-        grid = new Disc[6][7];
+        grid = new Discable[6][7];
     }
 
     // methods
 
-    public void addDisc(Disc disc, int row, int col){
+    public void addDisc(Discable disc, int row, int col){
         // adds a disc to a location in the grid.
         // just realized this is not how the game is played. Will fix later when I get to the player adds token step.
 

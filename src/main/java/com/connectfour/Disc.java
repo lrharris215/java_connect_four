@@ -1,6 +1,6 @@
 package com.connectfour;
 
-public class Disc {
+public class Disc implements Discable {
     String color;
     char symbol;
 
@@ -9,4 +9,13 @@ public class Disc {
         this.symbol = symbol;
     }
 
+    @Override
+    public char getSymbol() {
+        return symbol;
+    }
+
+    @Override
+    public String getColor() {
+        return color;
+    }
 }

@@ -1,17 +1,28 @@
 package com.connectfour;
 
-public class NullDisc extends Disc{
+public class NullDisc implements Discable{
     String color;
     char symbol;
 
-    private NullDisc(String color, char symbol){
-        super(color, symbol);
+    private NullDisc(){
+        color = "null";
+        symbol = '\u25CC';
     }
 
-    private static NullDisc nullDisc = new NullDisc("null", '\u25CC');
+    private static NullDisc nullDisc = new NullDisc();
 
     public static NullDisc getNullDisc(){
         return nullDisc;
+    }
+
+    @Override
+    public char getSymbol() {
+        return symbol;
+    }
+
+    @Override
+    public String getColor() {
+        return color;
     }
 
 }
