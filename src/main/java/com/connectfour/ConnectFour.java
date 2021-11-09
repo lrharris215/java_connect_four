@@ -5,14 +5,9 @@ public class ConnectFour {
         Display display = new Display(System.out);
         display.println("Connect Four!");
 
-        Disc testDisc = new Disc("White", '\u25C9');
-        Board testBoard = new Board();
-        testBoard.setUpGrid();
+        Board board = new Board();
+        board.setUpGrid();
 
-       Presenter.printBoard(display, testBoard);
-
-       testBoard.addDisc(testDisc, 1, 4);
-       Presenter.printBoard(display, testBoard);
-
+       Presenter.printBoard(display, board);
     }
 }
