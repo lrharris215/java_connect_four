@@ -9,8 +9,4 @@ public class Disc {
         this.symbol = symbol;
     }
 
-    public void printDisc(){
-        // prints the char to the console. Might use toString???
-        System.out.println(symbol);
-    }
 }

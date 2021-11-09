@@ -15,8 +15,8 @@ public class Board {
         grid[row][col] = disc;
     }
 
-    public void printBoard(){
-        // prints the board to the terminal
+    public void setUpGrid() {
+
     }
 
 }
