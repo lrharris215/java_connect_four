@@ -1,7 +1,7 @@
 package com.connectfour;
 
 public class Board {
-    // Board should consist of a matrix of Discs.
+    // Board should consist of a matrix of Discables.
     Discable[][] grid;
     public Board(){
         // Standard connect-four is 6x7
@@ -12,9 +12,14 @@ public class Board {
 
     public void addDisc(Discable disc, int row, int col){
         // adds a disc to a location in the grid.
-        // just realized this is not how the game is played. Will fix later when I get to the player adds token step.
+        // just realized this is not how the game is played
+        // TODO: Fix Board.addDisc();
 
         grid[row][col] = disc;
+    }
+
+    public Discable findDisc(int row, int col){
+        return grid[row][col];
     }
 
     public void setUpGrid() {
@@ -25,5 +30,7 @@ public class Board {
            }
        }
     }
+
+
 
 }
