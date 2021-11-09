@@ -72,7 +72,7 @@ class PresenterTest {
 
         @Override
         public String getColor() {
-            return "blue";
+            return "null";
         }
     }
 
