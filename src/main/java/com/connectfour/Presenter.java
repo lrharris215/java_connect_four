@@ -1,22 +1,23 @@
 package com.connectfour;
 
 public class Presenter {
-    public static void printBoard(Board board){
+    public static void printBoard(Display display, Board board){
         Discable disc;
+
         for(int i = 0; i < board.grid.length; i++){
             for(int j = 0; j < board.grid[0].length; j++){
                 disc = board.grid[i][j];
-                System.out.print("| ");
-                printDisc(disc);
-                System.out.print(" |");
+                display.print("| ");
+                printDisc(display, disc);
+                display.print(" |");
             }
-            System.out.print("\n");
+            display.print("\n");
         }
-        System.out.println("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
+        display.println("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
     }
 
-    public static void printDisc(Discable disc){
-        System.out.print(disc.getSymbol());
+    public static void printDisc(Display display, Discable disc){
+        display.print(disc.getSymbol());
     }
 
 

@@ -22,7 +22,7 @@ class BoardTest {
     void testFindDisc(){
         Board testBoard = new Board();
         Discable testDisc = new TestDisc();
-        testBoard.addDisc(testDisc, 0,0);
+        testBoard.grid[0][0] = testDisc;
 
         assertEquals(testDisc, testBoard.findDisc(0,0));
     }
