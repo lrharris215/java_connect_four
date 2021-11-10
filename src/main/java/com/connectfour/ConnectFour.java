@@ -11,8 +11,14 @@ public class ConnectFour {
 
         Presenter.printBoard(display, board);
 
-        board.addDisc(testDisc, 0 , 0);
-        board.addDisc(otherDisc, 3 , 4);
+        board.addDisc(testDisc, 0);
+        board.addDisc(otherDisc, 3);
+        board.addDisc(testDisc, 0);
+        board.addDisc(otherDisc, 0);
+        board.addDisc(testDisc, 0);
+        board.addDisc(otherDisc, 0);
+        board.addDisc(otherDisc, 0);
+        board.addDisc(testDisc, 0);
         Presenter.printBoard(display, board);
     }
 }
