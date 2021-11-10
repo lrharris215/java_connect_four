@@ -2,7 +2,7 @@ package com.connectfour;
 
 public class ConnectFour {
     public static void main(String[] args){
-        Display display = new Display();
+        Display display = new Display(System.out);
         display.println("Connect Four!\n");
 
         Disc testDisc = new Disc("red", '\u25C9');
