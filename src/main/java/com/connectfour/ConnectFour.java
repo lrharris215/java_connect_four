@@ -3,19 +3,20 @@ package com.connectfour;
 import java.util.Scanner;
 
 public class ConnectFour {
+
+    private static Display display;
+    private static Scanner scanner;
+    private static PlayerScanner playerScanner;
+    private static Board board;
+    private static Disc disc1;
+
+    private static Player playerOne;
+
+
     public static void main(String[] args){
-        Display display = new Display(System.out);
-        Scanner scanner = new Scanner(System.in);
-        PlayerScanner playerScanner = new PlayerScanner(scanner);
+        setUpGame();
 
-        display.println("Werlcome to Connect Four!!\n");
-
-        Disc disc1 = new Disc("red", '\u25C9');
-        Disc disc2 = new Disc("blue",'\u25C9' );
-        Board board = new Board();
-
-        Player playerOne = new Player(disc1, playerScanner);
-        Player playerTwo = new Player(disc2, playerScanner);
+        display.println("Welcome to Connect Four!!\n");
 
         Presenter.printBoard(display, board);
 
@@ -23,4 +24,14 @@ public class ConnectFour {
 
         Presenter.printBoard(display, board);
     }
+
+    private static void setUpGame(){
+        display = new Display(System.out);
+        scanner = new Scanner(System.in);
+        playerScanner = new PlayerScanner(scanner);
+        disc1 = new Disc("red", '\u25C9');
+        board = new Board();
+        playerOne = new Player(disc1, playerScanner);
+    }
+
 }
