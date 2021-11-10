@@ -1,9 +1,8 @@
 package com.connectfour;
 
-import java.io.InputStream;
 import java.util.Scanner;
 
-public class PlayerScanner {
+public class PlayerScanner implements Scannable{
     Scanner scanner;
     public PlayerScanner(Scanner scanner){
         this.scanner = scanner;

@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Player {
     Discable disc;
-    PlayerScanner scanner;
+    Scannable scanner;
 
-    public Player(Discable disc, PlayerScanner scanner){
+    public Player(Discable disc, Scannable scanner){
         this.disc = disc;
         this.scanner = scanner;
 

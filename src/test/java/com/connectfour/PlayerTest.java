@@ -10,7 +10,7 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
-    Scanner scanner;
+
     TestDisc testDisc;
     TestScanner testScanner;
     Player testPlayer;
@@ -18,9 +18,8 @@ class PlayerTest {
 
     @Test
     void testTakeTurn() {
-        scanner = new Scanner(System.in);
         testDisc = new TestDisc();
-        testScanner = new TestScanner(scanner);
+        testScanner = new TestScanner();
         testPlayer = new Player(testDisc, testScanner);
         board = new Board();
 
@@ -29,11 +28,7 @@ class PlayerTest {
         assertEquals(board.grid[5][0], testPlayer.disc);
     }
 
-    public class TestScanner extends PlayerScanner {
-
-        public TestScanner(Scanner scanner) {
-            super(scanner);
-        }
+    public class TestScanner implements Scannable {
 
         @Override
         public int getColumn() {
