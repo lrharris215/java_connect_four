@@ -33,7 +33,7 @@ class PlayerTest {
 
         @Override
         public int getColumn() {
-           return 0;
+           return 1;
         }
     }
 

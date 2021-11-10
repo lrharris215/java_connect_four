@@ -16,6 +16,7 @@ public class Player {
 
     public void takeTurn(Board board){
         int colChoice = scanner.getColumn();
+        colChoice = colChoice - 1;
         placeDisc(board, colChoice);
     }
 
