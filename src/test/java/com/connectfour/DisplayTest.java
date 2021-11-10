@@ -1,5 +1,6 @@
 package com.connectfour;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.OutputStream;
@@ -8,10 +9,17 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DisplayTest {
+
+    Display display;
+    TestStream testStream;
+
+    @BeforeEach
+    public void initTestStreamAndDisplay() {
+         testStream = new TestStream(System.out);
+         display = new Display(testStream);
+    }
     @Test
     void testStringPrint() {
-        TestStream testStream = new TestStream(System.out);
-        Display display = new Display(testStream);
         String message = "Hello";
         display.print(message);
 
@@ -20,9 +28,7 @@ class DisplayTest {
 
     @Test
     void testStringPrintln() {
-        TestStream testStream = new TestStream(System.out);
-        Display display = new Display(testStream);
-        String message = "Hello";
+        String message = "Hello!!";
         display.println(message);
 
         assertEquals(message, testStream.stringState);
@@ -30,8 +36,6 @@ class DisplayTest {
 
     @Test
     void testCharPrint() {
-        TestStream testStream = new TestStream(System.out);
-        Display display = new Display(testStream);
         char message = 'C';
         display.print(message);
         assertEquals(message, testStream.charState);
@@ -39,9 +43,7 @@ class DisplayTest {
 
     @Test
     void testCharPrintln() {
-        TestStream testStream = new TestStream(System.out);
-        Display display = new Display(testStream);
-        char message = 'C';
+        char message = 'D';
         display.print(message);
         assertEquals(message, testStream.charState);
     }

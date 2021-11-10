@@ -1,5 +1,6 @@
 package com.connectfour;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.PrintStream;
@@ -7,10 +8,16 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PresenterTest {
+    TestDisplay testDisplay;
+
+    @BeforeEach
+    public void initTestDisplay(){
+        testDisplay = new TestDisplay();
+    }
 
     @Test
     void testPrintBoard() {
-        TestDisplay testDisplay = new TestDisplay();
+
         Board board = new Board();
         Presenter.printBoard(testDisplay, board);
 
@@ -19,7 +26,7 @@ class PresenterTest {
 
     @Test
     void testPrintDisc() {
-        TestDisplay testDisplay = new TestDisplay();
+
         Discable testDisc = new TestDisc();
         Presenter.printDisc(testDisplay, testDisc);
 
