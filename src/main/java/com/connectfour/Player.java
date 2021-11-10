@@ -17,7 +17,7 @@ public class Player {
         placeDisc(board, colChoice);
     }
 
-    public void placeDisc(Board board, int col){
+    private void placeDisc(Board board, int col){
         board.addDisc(disc, col);
     }
 
