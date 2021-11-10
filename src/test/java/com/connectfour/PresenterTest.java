@@ -21,7 +21,7 @@ class PresenterTest {
         Board board = new Board();
         Presenter.printBoard(testDisplay, board);
 
-        assertEquals("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾", testDisplay.getStringState());
+        assertEquals("  1    2    3    4    5    6    7 ", testDisplay.getStringState());
     }
 
     @Test

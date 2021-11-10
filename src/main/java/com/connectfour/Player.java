@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class Player {
     Discable disc;
     Scannable scanner;
+    String name;
 
-    public Player(Discable disc, Scannable scanner){
+    public Player(String name, Discable disc, Scannable scanner){
         this.disc = disc;
         this.scanner = scanner;
+        this.name = name;
 
     }
 

@@ -20,7 +20,7 @@ public class ConnectFour {
 
         Presenter.printBoard(display, board);
 
-        playerOne.takeTurn(board);
+        nextTurn(playerOne);
 
         Presenter.printBoard(display, board);
     }
@@ -31,7 +31,13 @@ public class ConnectFour {
         playerScanner = new PlayerScanner(scanner);
         disc1 = new Disc("red", '\u25C9');
         board = new Board();
-        playerOne = new Player(disc1, playerScanner);
+        playerOne = new Player("Player One", disc1, playerScanner);
+    }
+
+    private static void nextTurn(Player player){
+        display.println(player.name + ", please select which column you would like to place your disc.");
+        display.println("Your color is " + player.disc.getColor());
+        player.takeTurn(board);
     }
 
 }

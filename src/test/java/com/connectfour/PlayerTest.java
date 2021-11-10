@@ -16,11 +16,12 @@ class PlayerTest {
     Player testPlayer;
     Board board;
 
+
     @Test
     void testTakeTurn() {
         testDisc = new TestDisc();
         testScanner = new TestScanner();
-        testPlayer = new Player(testDisc, testScanner);
+        testPlayer = new Player("Test", testDisc, testScanner);
         board = new Board();
 
         testPlayer.takeTurn(board);
