@@ -22,3 +22,7 @@ test {
 application {
     mainClassName = 'com.connectfour.ConnectFour'
 }
+
+run {
+    standardInput = System.in
+}
