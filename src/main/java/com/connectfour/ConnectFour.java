@@ -4,19 +4,8 @@ import java.util.Scanner;
 
 public class ConnectFour {
 
-    private static Display display;
-    private static Scanner scanner;
-    private static PlayerScanner playerScanner;
-    private static Board board;
-    private static Disc disc1;
-
-    private static Player playerOne;
-
-    private static Game game;
-
-
     public static void main(String[] args){
-        game = setUpGame();
+        Game game = setUpGame();
 
         game.start();
 
@@ -24,6 +13,14 @@ public class ConnectFour {
     }
 
     private static Game setUpGame(){
+        Display display;
+        Scanner scanner;
+        PlayerScanner playerScanner;
+        Board board;
+        Disc disc1;
+
+        Player playerOne;
+
         display = new Display(System.out);
         scanner = new Scanner(System.in);
         playerScanner = new PlayerScanner(scanner);
