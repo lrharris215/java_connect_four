@@ -13,7 +13,7 @@ public class TestClasses {
 
         @Override
         public String getColor() {
-            return "blue";
+            return "black";
         }
     }
     public static class TestPlayer implements Playerable {
