@@ -10,11 +10,11 @@ public class Game {
     Displayable display;
     Scannable scanner;
     Board board;
-    Player playerOne;
+    Playerable playerOne;
 
 
 
-    public Game(Displayable display, Scannable scanner, Board board, Player playerOne){
+    public Game(Displayable display, Scannable scanner, Board board, Playerable playerOne){
         this.display = display;
         this.scanner = scanner;
         this.playerOne = playerOne;
@@ -23,18 +23,17 @@ public class Game {
 
     public void start(){
         display.println(WELCOME);
-
-        Presenter.printBoard(display, board);
     }
 
     public void play(){
+        Presenter.printBoard(display, board);
         nextTurn(playerOne);
         Presenter.printBoard(display, board);
     }
 
-    public void nextTurn(Player player){
-        display.println(player.name + PLAYERCHOICE);
-        display.println(DISCCOLOR + player.disc.getColor());
+    private void nextTurn(Playerable player){
+        display.println(player.getName() + PLAYERCHOICE);
+        display.println(DISCCOLOR + player.getDisc().getColor());
         player.takeTurn(board);
     }
 
