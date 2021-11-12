@@ -31,7 +31,7 @@ public class TestClasses {
 
         @Override
         public Discable getDisc() {
-            return null;
+            return new TestDisc();
         }
     }
 
