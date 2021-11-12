@@ -12,32 +12,26 @@ public class ConnectFour {
 
     private static Player playerOne;
 
+    private static Game game;
+
 
     public static void main(String[] args){
-        setUpGame();
+        game = setUpGame();
 
-        display.println("Welcome to Connect Four!!\n");
+        game.start();
 
-        Presenter.printBoard(display, board);
-
-        nextTurn(playerOne);
-
-        Presenter.printBoard(display, board);
+        game.play();
     }
 
-    private static void setUpGame(){
+    private static Game setUpGame(){
         display = new Display(System.out);
         scanner = new Scanner(System.in);
         playerScanner = new PlayerScanner(scanner);
         disc1 = new Disc("red", '\u25C9');
         board = new Board();
         playerOne = new Player("Player One", disc1, playerScanner);
-    }
 
-    private static void nextTurn(Player player){
-        display.println(player.name + ", please select which column you would like to place your disc.");
-        display.println("Your color is " + player.disc.getColor());
-        player.takeTurn(board);
+        return new Game(display, playerScanner, board, playerOne);
     }
 
 }
