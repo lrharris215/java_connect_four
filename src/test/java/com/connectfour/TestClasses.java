@@ -2,6 +2,7 @@ package com.connectfour;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class TestClasses {
     public static class TestDisc implements Discable {
@@ -69,40 +70,42 @@ public class TestClasses {
     }
 
     public static class TestDisplay implements Displayable {
-        String stringState;
-        char charState;
+        ArrayList<String> stringState;
+        ArrayList<Character> charState;
 
         public TestDisplay(){
-            stringState = "";
-            charState = ' ';
+            stringState = new ArrayList<String>();
+            charState = new ArrayList<Character>();
         }
+
         @Override
         public void print(String message) {
-            stringState = message;
+            stringState.add(message);
         }
 
         @Override
         public void println(String message) {
-            stringState = message;
+            stringState.add(message);
         }
 
         @Override
         public void print(char message) {
-            charState = message;
+            charState.add(message);
         }
 
         @Override
         public void println(char message) {
-            charState = message;
+            charState.add(message);
         }
 
-        public char getCharState(){
-            return charState;
+        public String getLastString(){
+            return stringState.get(stringState.size() - 1);
         }
 
-        public String getStringState(){
-            return stringState;
+        public char getLastChar(){
+            return charState.get(charState.size() - 1);
         }
+
     }
 
 

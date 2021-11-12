@@ -21,7 +21,7 @@ class PresenterTest {
         Board board = new Board();
         Presenter.printBoard(testDisplay, board);
 
-        assertEquals("  1    2    3    4    5    6    7 ", testDisplay.getStringState());
+        assertEquals("  1    2    3    4    5    6    7 ", testDisplay.getLastString());
     }
 
     @Test
@@ -30,7 +30,7 @@ class PresenterTest {
         Discable testDisc = new TestClasses.TestDisc();
         Presenter.printDisc(testDisplay, testDisc);
 
-        assertEquals(testDisplay.getCharState(), testDisc.getSymbol());
+        assertEquals(testDisplay.getLastChar(), testDisc.getSymbol());
     }
 
 }
