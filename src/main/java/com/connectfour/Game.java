@@ -2,7 +2,7 @@ package com.connectfour;
 
 public class Game {
     // string consts. might move later
-    private static final String WELCOME = "Welcome to Connect Four!!\n";
+    public static final String WELCOME = "Welcome to Connect Four!!\n";
     private static final String PLAYERCHOICE = ", please select which column you would like to place your disc.";
     private static final String DISCCOLOR = "Your color is ";
 
