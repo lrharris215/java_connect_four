@@ -11,42 +11,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
-    TestDisc testDisc;
-    TestScanner testScanner;
+    TestClasses.TestDisc testDisc;
+    TestClasses.TestScanner testScanner;
     Player testPlayer;
     Board board;
 
 
     @Test
     void testTakeTurn() {
-        testDisc = new TestDisc();
-        testScanner = new TestScanner();
+        testDisc = new TestClasses.TestDisc();
+        testScanner = new TestClasses.TestScanner();
         testPlayer = new Player("Test", testDisc, testScanner);
         board = new Board();
 
         testPlayer.takeTurn(board);
 
         assertEquals(board.grid[5][0], testPlayer.disc);
-    }
-
-    public class TestScanner implements Scannable {
-
-        @Override
-        public int getColumn() {
-           return 1;
-        }
-    }
-
-    public class TestDisc implements Discable {
-
-        @Override
-        public char getSymbol() {
-            return 'X';
-        }
-
-        @Override
-        public String getColor() {
-            return "blue";
-        }
     }
 }
