@@ -1,11 +1,18 @@
 package com.connectfour;
 
 public class Game {
-    //this will actually be in charge of playing the game.
+    // string consts. might move later
+    private static final String WELCOME = "Welcome to Connect Four!!\n";
+    private static final String PLAYERCHOICE = ", please select which column you would like to place your disc.";
+    private static final String DISCCOLOR = "Your color is ";
+
+    // instance vars
     Displayable display;
     Scannable scanner;
     Board board;
     Player playerOne;
+
+
 
     public Game(Displayable display, Scannable scanner, Board board, Player playerOne){
         this.display = display;
@@ -15,7 +22,7 @@ public class Game {
     }
 
     public void start(){
-        display.println("Welcome to Connect Four!!\n");
+        display.println(WELCOME);
 
         Presenter.printBoard(display, board);
     }
@@ -26,8 +33,8 @@ public class Game {
     }
 
     public void nextTurn(Player player){
-        display.println(player.name + ", please select which column you would like to place your disc.");
-        display.println("Your color is " + player.disc.getColor());
+        display.println(player.name + PLAYERCHOICE);
+        display.println(DISCCOLOR + player.disc.getColor());
         player.takeTurn(board);
     }
 
