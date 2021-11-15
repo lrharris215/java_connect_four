@@ -20,7 +20,7 @@ public class TestClasses {
     public static class TestPlayer implements Playerable {
 
         @Override
-        public void takeTurn(Board board, Validator validator) {
+        public void takeTurn(Board board) {
 
         }
 

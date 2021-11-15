@@ -8,14 +8,15 @@ public class Player implements Playerable{
     String name;
     Validator moveValidator;
 
-    public Player(String name, Discable disc, Scannable scanner){
+    public Player(String name, Discable disc, Scannable scanner, Validator moveValidator){
         this.disc = disc;
         this.scanner = scanner;
         this.name = name;
+        this.moveValidator = moveValidator;
 
     }
 
-    public void takeTurn(Board board, Validator moveValidator){
+    public void takeTurn(Board board){
         int colChoice = scanner.getColumn();
         while(!moveValidator.isValid(board, colChoice)){
             colChoice = scanner.getColumn();

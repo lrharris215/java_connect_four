@@ -30,9 +30,9 @@ public class ConnectFour {
         board = new Board();
 
 
-        playerOne = new Player("Player One", disc1, playerScanner);
+        playerOne = new Player("Player One", disc1, playerScanner, moveValidator);
 
-        return new Game(display, playerScanner, moveValidator, board, playerOne);
+        return new Game(display, board, playerOne);
     }
 
 }

@@ -22,11 +22,12 @@ class PlayerTest {
     void testTakeTurn() {
         testDisc = new TestClasses.TestDisc();
         testScanner = new TestClasses.TestScanner();
-        testPlayer = new Player("Test", testDisc, testScanner);
-        board = new Board();
         testValidator = new TestClasses.TestValidator();
+        testPlayer = new Player("Test", testDisc, testScanner, testValidator);
+        board = new Board();
 
-        testPlayer.takeTurn(board, testValidator);
+
+        testPlayer.takeTurn(board);
 
         assertEquals(board.grid[5][0], testPlayer.disc);
     }

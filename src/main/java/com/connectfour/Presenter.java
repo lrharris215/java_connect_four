@@ -40,5 +40,9 @@ public class Presenter {
 
     }
 
+    public static void printError(Displayable display, String error){
+        display.println(ANSI_RED + error + ANSI_RESET);
+    }
+
 
 }

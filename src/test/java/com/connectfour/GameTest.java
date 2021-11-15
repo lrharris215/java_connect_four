@@ -9,7 +9,6 @@ class GameTest {
     TestClasses.TestDisplay testDisplay;
     Playerable testPlayer;
     Board board;
-    Scannable testScanner;
     Game game;
     Validator testValidator;
 
@@ -18,11 +17,10 @@ class GameTest {
         testDisplay = new TestClasses.TestDisplay();
         testPlayer = new TestClasses.TestPlayer();
         board = new Board();
-        testScanner = new TestClasses.TestScanner();
         testValidator = new TestClasses.TestValidator();
 
 
-        game = new Game(testDisplay, testScanner, testValidator, board, testPlayer);
+        game = new Game(testDisplay, board, testPlayer);
     }
 
     @Test
