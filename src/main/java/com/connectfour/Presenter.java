@@ -25,6 +25,7 @@ public class Presenter {
             display.print("\n");
         }
         display.println("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
+        display.println("  1    2    3    4    5    6    7 ");
     }
 
     public static void printDisc(Displayable display, Discable disc){

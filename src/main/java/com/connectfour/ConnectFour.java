@@ -1,18 +1,34 @@
 package com.connectfour;
 
+import java.util.Scanner;
+
 public class ConnectFour {
+
     public static void main(String[] args){
-        Display display = new Display(System.out);
-        display.println("Connect Four!\n");
+        Game game = setUpGame();
 
-        Disc testDisc = new Disc("red", '\u25C9');
-        Disc otherDisc = new Disc("blue",'\u25C9' );
-        Board board = new Board();
+        game.start();
 
-        Presenter.printBoard(display, board);
-
-        board.addDisc(testDisc, 0 , 0);
-        board.addDisc(otherDisc, 3 , 4);
-        Presenter.printBoard(display, board);
+        game.play();
     }
+
+    private static Game setUpGame(){
+        Display display;
+        Scanner scanner;
+        PlayerScanner playerScanner;
+        Board board;
+        Disc disc1;
+
+        Player playerOne;
+
+        display = new Display(System.out);
+        scanner = new Scanner(System.in);
+        playerScanner = new PlayerScanner(scanner);
+        disc1 = new Disc("red", '\u25C9');
+        board = new Board();
+        playerOne = new Player("Player One", disc1, playerScanner);
+
+        return new Game(display, playerScanner, board, playerOne);
+    }
+
 }
