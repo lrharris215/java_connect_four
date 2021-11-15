@@ -20,7 +20,7 @@ class GameTest {
         testValidator = new TestClasses.TestValidator();
 
 
-        game = new Game(testDisplay, board, testPlayer);
+        game = new Game(testDisplay, board, testPlayer, testPlayer);
     }
 
     @Test

@@ -11,12 +11,15 @@ public class Game {
     Board board;
     Playerable playerOne;
     Playerable playerTwo;
+    Playerable activePlayer;
 
     public Game(Displayable display, Board board, Playerable playerOne, Playerable playerTwo){
         this.display = display;
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         this.board = board;
+
+        activePlayer = playerOne;
 
     }
 
@@ -25,9 +28,14 @@ public class Game {
     }
 
     public void play(){
+
+        for(int i = 0; i < 10; i++){
+            Presenter.printBoard(display, board);
+            nextTurn(activePlayer);
+            switchPlayers();
+        }
         Presenter.printBoard(display, board);
-        nextTurn(playerOne);
-        Presenter.printBoard(display, board);
+
     }
 
     private void nextTurn(Playerable player){
@@ -36,5 +44,7 @@ public class Game {
         player.takeTurn(display, board);
     }
 
-
+    private void switchPlayers(){
+        activePlayer = activePlayer == playerOne ? playerTwo : playerOne;
+    }
 }
