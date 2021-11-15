@@ -28,10 +28,10 @@ public class ConnectFour {
         scanner = new Scanner(System.in);
         playerScanner = new PlayerScanner(scanner);
         moveValidator = new MoveValidator();
-        disc1 = new Disc("red", '\u25C9');
-        disc2 = new Disc("blue", '\u25C9');
-        board = new Board();
+        disc1 = new Disc("red");
+        disc2 = new Disc("blue");
 
+        board = new Board();
 
         playerOne = new Player("Player One", disc1, playerScanner, moveValidator);
         playerTwo = new Player("Player Two", disc2, playerScanner, moveValidator);

@@ -5,9 +5,9 @@ public class Disc implements Discable {
     char symbol;
     // saving the unicode for the symbol I want to use: '\u25C9'
 
-    public Disc(String color, char symbol){
+    public Disc(String color){
         this.color = color;
-        this.symbol = symbol;
+        this.symbol = '\u25C9';
     }
 
     @Override
