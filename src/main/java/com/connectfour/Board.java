@@ -35,7 +35,7 @@ public class Board {
        }
     }
 
-    private boolean isEmpty(int row, int col){
+    public boolean isEmpty(int row, int col){
         return grid[row][col] == NullDisc.getNullDisc();
     }
 
