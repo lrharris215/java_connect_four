@@ -11,6 +11,7 @@ class GameTest {
     Board board;
     Scannable testScanner;
     Game game;
+    Validator testValidator;
 
     @BeforeEach
     void initAllTestClasses(){
@@ -18,8 +19,10 @@ class GameTest {
         testPlayer = new TestClasses.TestPlayer();
         board = new Board();
         testScanner = new TestClasses.TestScanner();
+        testValidator = new TestClasses.TestValidator();
 
-        game = new Game(testDisplay, testScanner, board, testPlayer);
+
+        game = new Game(testDisplay, testScanner, testValidator, board, testPlayer);
     }
 
     @Test

@@ -11,14 +11,16 @@ public class Game {
     Scannable scanner;
     Board board;
     Playerable playerOne;
+    Validator moveValidator;
 
 
 
-    public Game(Displayable display, Scannable scanner, Board board, Playerable playerOne){
+    public Game(Displayable display, Scannable scanner, Validator moveValidator, Board board, Playerable playerOne){
         this.display = display;
         this.scanner = scanner;
         this.playerOne = playerOne;
         this.board = board;
+        this.moveValidator = moveValidator;
     }
 
     public void start(){
@@ -34,7 +36,7 @@ public class Game {
     private void nextTurn(Playerable player){
         display.println(player.getName() + PLAYERCHOICE);
         display.println(DISCCOLOR + player.getDisc().getColor());
-        player.takeTurn(board);
+        player.takeTurn(board, moveValidator);
     }
 
 

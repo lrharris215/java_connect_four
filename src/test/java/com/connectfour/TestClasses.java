@@ -20,7 +20,7 @@ public class TestClasses {
     public static class TestPlayer implements Playerable {
 
         @Override
-        public void takeTurn(Board board) {
+        public void takeTurn(Board board, Validator validator) {
 
         }
 
@@ -40,6 +40,14 @@ public class TestClasses {
         @Override
         public int getColumn() {
             return 1;
+        }
+    }
+
+    public static class TestValidator implements Validator {
+
+        @Override
+        public boolean isValid(Board board, int column) {
+            return true;
         }
     }
 

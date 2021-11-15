@@ -15,6 +15,7 @@ class PlayerTest {
     TestClasses.TestScanner testScanner;
     Player testPlayer;
     Board board;
+    Validator testValidator;
 
 
     @Test
@@ -23,8 +24,9 @@ class PlayerTest {
         testScanner = new TestClasses.TestScanner();
         testPlayer = new Player("Test", testDisc, testScanner);
         board = new Board();
+        testValidator = new TestClasses.TestValidator();
 
-        testPlayer.takeTurn(board);
+        testPlayer.takeTurn(board, testValidator);
 
         assertEquals(board.grid[5][0], testPlayer.disc);
     }
