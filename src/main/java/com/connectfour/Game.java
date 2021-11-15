@@ -10,10 +10,12 @@ public class Game {
     Displayable display;
     Board board;
     Playerable playerOne;
+    Playerable playerTwo;
 
-    public Game(Displayable display, Board board, Playerable playerOne){
+    public Game(Displayable display, Board board, Playerable playerOne, Playerable playerTwo){
         this.display = display;
         this.playerOne = playerOne;
+        this.playerTwo = playerTwo;
         this.board = board;
 
     }
