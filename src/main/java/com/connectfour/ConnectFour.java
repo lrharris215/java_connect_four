@@ -26,7 +26,7 @@ public class ConnectFour {
         scanner = new Scanner(System.in);
         playerScanner = new PlayerScanner(scanner);
         moveValidator = new MoveValidator();
-        disc1 = new Disc("red", '\u25C9');
+        disc1 = new Disc("red");
         board = new Board();
 
 
