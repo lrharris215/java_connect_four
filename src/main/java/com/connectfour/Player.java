@@ -3,6 +3,8 @@ package com.connectfour;
 import java.util.Scanner;
 
 public class Player implements Playerable{
+    public final String VALIDATION_ERROR = "That is not a valid move! Please choose a number between 1 and 7";
+
     Discable disc;
     Scannable scanner;
     String name;
@@ -16,9 +18,10 @@ public class Player implements Playerable{
 
     }
 
-    public void takeTurn(Board board){
+    public void takeTurn(Displayable display, Board board){
         int colChoice = scanner.getColumn();
         while(!moveValidator.isValid(board, colChoice)){
+            Presenter.printError(display, VALIDATION_ERROR);
             colChoice = scanner.getColumn();
         }
         colChoice = colChoice - 1;

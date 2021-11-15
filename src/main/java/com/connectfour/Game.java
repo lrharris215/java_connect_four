@@ -31,7 +31,7 @@ public class Game {
     private void nextTurn(Playerable player){
         display.println(player.getName() + PLAYERCHOICE);
         display.println(DISCCOLOR + player.getDisc().getColor());
-        player.takeTurn(board);
+        player.takeTurn(display, board);
     }
 
 
