@@ -18,7 +18,7 @@ class PresenterTest {
     @Test
     void testPrintBoard() {
 
-        Board board = new Board();
+        Boardable board = new TestClasses.TestBoard();
         Presenter.printBoard(testDisplay, board);
 
         assertEquals("  1    2    3    4    5    6    7 ", testDisplay.getLastString());
@@ -33,4 +33,5 @@ class PresenterTest {
         assertEquals(testDisplay.getLastChar(), testDisc.getSymbol());
     }
 
+    //TODO add test for error
 }

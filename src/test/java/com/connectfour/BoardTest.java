@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
-    Board testBoard = new Board();
+    Boardable testBoard = new Board();
 
     @BeforeEach
     public void initBoard(){
@@ -18,7 +18,7 @@ class BoardTest {
         Discable testDisc = new TestClasses.TestDisc();
         testBoard.addDisc(testDisc, 0);
 
-        assertEquals( testDisc, testBoard.grid[5][0]);
+        assertEquals( testDisc, testBoard.getGrid()[5][0]);
 
     }
 
@@ -28,7 +28,7 @@ class BoardTest {
         testBoard.addDisc(testDisc, 0);
         testBoard.addDisc(testDisc, 0);
 
-        assertEquals(testDisc, testBoard.grid[4][0]);
+        assertEquals(testDisc, testBoard.getGrid()[4][0]);
     }
 
     @Test
@@ -40,7 +40,7 @@ class BoardTest {
     @Test
     void testFindDisc(){
         Discable testDisc = new TestClasses.TestDisc();
-        testBoard.grid[0][0] = testDisc;
+        testBoard.getGrid()[0][0] = testDisc;
 
         assertEquals(testDisc, testBoard.findDisc(0,0));
     }

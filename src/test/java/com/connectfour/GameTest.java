@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GameTest {
     TestClasses.TestDisplay testDisplay;
     Playerable testPlayer;
-    Board board;
+    Boardable testBoard;
     Game game;
     Validator testValidator;
 
@@ -16,11 +16,11 @@ class GameTest {
     void initAllTestClasses(){
         testDisplay = new TestClasses.TestDisplay();
         testPlayer = new TestClasses.TestPlayer();
-        board = new Board();
+        testBoard = new TestClasses.TestBoard();
         testValidator = new TestClasses.TestValidator();
 
 
-        game = new Game(testDisplay, board, testPlayer);
+        game = new Game(testDisplay, testBoard, testPlayer);
     }
 
     @Test
