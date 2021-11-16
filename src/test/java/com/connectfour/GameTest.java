@@ -27,7 +27,7 @@ class GameTest {
     void testStartDisplaysWelcomeMessage() {
         game.start();
 
-        assertEquals(testDisplay.getLastString(), game.WELCOME);
+        assertEquals(testDisplay.getLastString(), Constants.WELCOME);
     }
 
     @Test

@@ -1,11 +1,6 @@
 package com.connectfour;
 
 public class Game {
-    // string consts. might move later
-    public static final String WELCOME = "Welcome to Connect Four!!\n";
-    private static final String PLAYER_CHOICE = ", please select which column you would like to place your disc.";
-    private static final String DISC_COLOR = "Your color is ";
-
     // instance vars
     Displayable display;
     Boardable board;
@@ -20,7 +15,7 @@ public class Game {
     }
 
     public void start(){
-        display.println(WELCOME);
+        display.println(Constants.WELCOME);
     }
 
     public void play(){
@@ -30,8 +25,9 @@ public class Game {
     }
 
     private void nextTurn(Playerable player){
-        display.println(player.getName() + PLAYER_CHOICE);
-        display.println(DISC_COLOR + player.getDisc().getColor());
+        display.println(player.getName() + Constants.PLAYER_CHOICE);
+        //TODO player.getColor
+        display.println(Constants.DISC_COLOR + player.getDisc().getColor());
         int nextCol = player.getInput(display, board);
         board.addDisc(player.getDisc(), nextCol);
     }
