@@ -27,7 +27,7 @@ public class Game {
     private void nextTurn(Playerable player){
         display.println(player.getName() + Constants.PLAYER_CHOICE);
         //TODO player.getColor
-        display.println(Constants.DISC_COLOR + player.getDisc().getColor());
+        display.println(Constants.DISC_COLOR + player.getDiscColor());
         int nextCol = player.getInput(display, board);
         board.addDisc(player.getDisc(), nextCol);
     }

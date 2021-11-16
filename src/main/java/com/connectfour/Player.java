@@ -18,6 +18,7 @@ public class Player implements Playerable{
 
     }
 
+    @Override
     public int getInput(Displayable display, Boardable board){
         int colChoice = scanner.getColumn();
         while(!moveValidator.isValid(board, colChoice)){
@@ -37,5 +38,6 @@ public class Player implements Playerable{
         return disc;
     }
 
-
+    @Override
+    public String getDiscColor(){ return disc.getColor(); }
 }

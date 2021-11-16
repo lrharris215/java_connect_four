@@ -33,6 +33,11 @@ public class TestClasses {
         public Discable getDisc() {
             return new TestDisc();
         }
+
+        @Override
+        public String getDiscColor() {
+            return "Test Color";
+        }
     }
 
     public static class TestScanner implements Scannable {
