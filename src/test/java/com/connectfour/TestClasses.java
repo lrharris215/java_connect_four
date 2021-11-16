@@ -17,53 +17,6 @@ public class TestClasses {
             return "black";
         }
     }
-
-    public static class TestBoard implements Boardable {
-        Discable[][] grid;
-        public TestBoard(){
-            grid = new Discable[3][3];
-            setUpGrid();
-        }
-        @Override
-        public void addDisc(Discable disc, int col) {
-            for(int row = grid.length - 1; row >= 0; row--){
-                if(isEmpty(row, col - 1)){
-                    grid[row][col - 1] = disc;
-                    break;
-                }
-            }
-        }
-
-        @Override
-        public Discable findDisc(int row, int col) {
-
-            return grid[row][col];
-        }
-
-        @Override
-        public boolean isEmpty(int row, int col) {
-            return grid[row][col] == NullDisc.getNullDisc();
-        }
-
-        @Override
-        public void setUpGrid() {
-            for(int i = 0; i < grid.length; i++){
-                for(int j = 0; j < grid[0].length; j++){
-                    grid[i][j] = NullDisc.getNullDisc();
-                }
-            }
-        }
-
-        @Override
-        public Discable[][] getGrid() {
-            return grid;
-        }
-
-        @Override
-        public Discable[] getRow(int row) {
-            return grid[row];
-        }
-    }
     public static class TestPlayer implements Playerable {
 
         @Override

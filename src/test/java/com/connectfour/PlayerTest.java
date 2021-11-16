@@ -25,11 +25,11 @@ class PlayerTest {
         testValidator = new TestClasses.TestValidator();
         testDisplay = new TestClasses.TestDisplay();
         testPlayer = new Player("Test", testDisc, testScanner, testValidator);
-        testBoard = new TestClasses.TestBoard();
+        testBoard = new Board();
 
 
         testPlayer.takeTurn(testDisplay, testBoard);
 
-        assertEquals(testBoard.findDisc(2,0), testPlayer.getDisc());
+        assertEquals(testBoard.findDisc(5,0), testPlayer.getDisc());
     }
 }
