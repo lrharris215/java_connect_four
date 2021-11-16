@@ -33,5 +33,13 @@ class PresenterTest {
         assertEquals(testDisplay.getLastChar(), testDisc.getSymbol());
     }
 
-    //TODO add test for error
+    @Test
+    void testPrintError() {
+        String error = "ERROR";
+        String errorWithColors = Presenter.ANSI_RED + error + Presenter.ANSI_RESET;
+        Presenter.printError(testDisplay, error);
+
+        assertEquals(errorWithColors, testDisplay.getLastString());
+    }
+
 }
