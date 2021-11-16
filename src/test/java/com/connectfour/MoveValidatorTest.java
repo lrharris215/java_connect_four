@@ -35,7 +35,7 @@ class MoveValidatorTest {
     void testIsValidDoesntAllowColIfColIsFull(){
         fillBoardCol(testBoard, 2);
 
-        assertFalse(moveValidator.isValid(testBoard, 3));
+        assertFalse(moveValidator.isValid(testBoard, 2));
     }
 
     // fills a single column of the board with testDiscs

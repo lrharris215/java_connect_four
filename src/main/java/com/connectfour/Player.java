@@ -24,8 +24,7 @@ public class Player implements Playerable{
             Presenter.printError(display, VALIDATION_ERROR);
             colChoice = scanner.getColumn();
         }
-        colChoice = colChoice - 1;
-        placeDisc(board, colChoice);
+        board.addDisc(disc, colChoice);
     }
 
     @Override
@@ -38,9 +37,5 @@ public class Player implements Playerable{
         return disc;
     }
 
-
-    private void placeDisc(Boardable board, int col){
-        board.addDisc(disc, col);
-    }
 
 }

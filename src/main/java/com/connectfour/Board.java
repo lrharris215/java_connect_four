@@ -15,8 +15,8 @@ public class Board implements Boardable{
         // adds a disc to a column in the grid.
         // takes in a column, needs to figure out how far down the piece goes.
         for(int row = grid.length - 1; row >= 0; row--){
-            if(isEmpty(row, col)){
-                grid[row][col] = disc;
+            if(isEmpty(row, col - 1)){
+                grid[row][col - 1] = disc;
                 break;
             }
         }

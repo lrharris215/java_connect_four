@@ -16,7 +16,7 @@ class BoardTest {
     @Test
     void testAddDiscPutsDiscAtBottomOfEmptyRow() {
         Discable testDisc = new TestClasses.TestDisc();
-        testBoard.addDisc(testDisc, 0);
+        testBoard.addDisc(testDisc, 1);
 
         assertEquals( testDisc, testBoard.getGrid()[5][0]);
 
@@ -25,8 +25,8 @@ class BoardTest {
     @Test
     void testAddDiscPlacesDiscOnTopOfOtherDiscs(){
         Discable testDisc = new TestClasses.TestDisc();
-        testBoard.addDisc(testDisc, 0);
-        testBoard.addDisc(testDisc, 0);
+        testBoard.addDisc(testDisc, 1);
+        testBoard.addDisc(testDisc, 1);
 
         assertEquals(testDisc, testBoard.getGrid()[4][0]);
     }

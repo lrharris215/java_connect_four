@@ -27,8 +27,8 @@ public class TestClasses {
         @Override
         public void addDisc(Discable disc, int col) {
             for(int row = grid.length - 1; row >= 0; row--){
-                if(isEmpty(row, col)){
-                    grid[row][col] = disc;
+                if(isEmpty(row, col - 1)){
+                    grid[row][col - 1] = disc;
                     break;
                 }
             }
