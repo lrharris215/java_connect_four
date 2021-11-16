@@ -13,8 +13,8 @@ class PlayerTest {
 
     Discable testDisc;
     Scannable testScanner;
-    Player testPlayer;
-    Board board;
+    Playerable testPlayer;
+    Boardable testBoard;
     Validator testValidator;
     Displayable testDisplay;
 
@@ -25,11 +25,11 @@ class PlayerTest {
         testValidator = new TestClasses.TestValidator();
         testDisplay = new TestClasses.TestDisplay();
         testPlayer = new Player("Test", testDisc, testScanner, testValidator);
-        board = new Board();
+        testBoard = new TestClasses.TestBoard();
 
 
-        testPlayer.takeTurn(testDisplay, board);
+        testPlayer.takeTurn(testDisplay, testBoard);
 
-        assertEquals(board.grid[5][0], testPlayer.disc);
+        assertEquals(testBoard.findDisc(2,0), testPlayer.getDisc());
     }
 }

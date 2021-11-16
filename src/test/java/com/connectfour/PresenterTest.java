@@ -18,7 +18,7 @@ class PresenterTest {
     @Test
     void testPrintBoard() {
 
-        Board board = new Board();
+        Boardable board = new TestClasses.TestBoard();
         Presenter.printBoard(testDisplay, board);
 
         assertEquals("  1    2    3    4    5    6    7 ", testDisplay.getLastString());
@@ -31,6 +31,15 @@ class PresenterTest {
         Presenter.printDisc(testDisplay, testDisc);
 
         assertEquals(testDisplay.getLastChar(), testDisc.getSymbol());
+    }
+
+    @Test
+    void testPrintError() {
+        String error = "ERROR";
+        String errorWithColors = Presenter.ANSI_RED + error + Presenter.ANSI_RESET;
+        Presenter.printError(testDisplay, error);
+
+        assertEquals(errorWithColors, testDisplay.getLastString());
     }
 
 }

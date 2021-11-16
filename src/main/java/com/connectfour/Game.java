@@ -3,17 +3,19 @@ package com.connectfour;
 public class Game {
     // string consts. might move later
     public static final String WELCOME = "Welcome to Connect Four!!\n";
-    private static final String PLAYERCHOICE = ", please select which column you would like to place your disc.";
-    private static final String DISCCOLOR = "Your color is ";
+    private static final String PLAYER_CHOICE = ", please select which column you would like to place your disc.";
+    private static final String DISC_COLOR = "Your color is ";
 
     // instance vars
     Displayable display;
-    Board board;
+    Boardable board;
     Playerable playerOne;
     Playerable playerTwo;
     Playerable activePlayer;
 
-    public Game(Displayable display, Board board, Playerable playerOne, Playerable playerTwo){
+
+    public Game(Displayable display, Boardable board, Playerable playerOne, Playerable playerTwo){
+
         this.display = display;
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
@@ -39,8 +41,8 @@ public class Game {
     }
 
     private void nextTurn(Playerable player){
-        display.println(player.getName() + PLAYERCHOICE);
-        display.println(DISCCOLOR + player.getDisc().getColor());
+        display.println(player.getName() + PLAYER_CHOICE);
+        display.println(DISC_COLOR + player.getDisc().getColor());
         player.takeTurn(display, board);
     }
 

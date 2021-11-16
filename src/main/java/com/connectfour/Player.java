@@ -18,14 +18,13 @@ public class Player implements Playerable{
 
     }
 
-    public void takeTurn(Displayable display, Board board){
+    public void takeTurn(Displayable display, Boardable board){
         int colChoice = scanner.getColumn();
         while(!moveValidator.isValid(board, colChoice)){
             Presenter.printError(display, VALIDATION_ERROR);
             colChoice = scanner.getColumn();
         }
-        colChoice = colChoice - 1;
-        placeDisc(board, colChoice);
+        board.addDisc(disc, colChoice);
     }
 
     @Override
@@ -38,9 +37,5 @@ public class Player implements Playerable{
         return disc;
     }
 
-
-    private void placeDisc(Board board, int col){
-        board.addDisc(disc, col);
-    }
 
 }

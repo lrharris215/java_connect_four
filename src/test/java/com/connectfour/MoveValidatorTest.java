@@ -8,40 +8,40 @@ import static org.junit.jupiter.api.Assertions.*;
 class MoveValidatorTest {
 
     MoveValidator moveValidator;
-    Board board;
+    Boardable testBoard;
 
     @BeforeEach
     void initBoardAndValidator(){
         moveValidator = new MoveValidator();
-        board = new Board();
+        testBoard = new TestClasses.TestBoard();
     }
 
     @Test
     void testIsValidDoesntAllowColGreaterThan7() {
-        assertFalse(moveValidator.isValid(board, 8));
+        assertFalse(moveValidator.isValid(testBoard, 8));
     }
 
     @Test
     void testIsValidDoesntAllowColLessThanOne(){
-        assertFalse(moveValidator.isValid(board, 0));
+        assertFalse(moveValidator.isValid(testBoard, 0));
     }
 
     @Test
     void testIsValidAcceptsColBetween1And7WhenThereIsSpace(){
-        assertTrue(moveValidator.isValid(board, 5));
+        assertTrue(moveValidator.isValid(testBoard, 2));
     }
 
     @Test
     void testIsValidDoesntAllowColIfColIsFull(){
-        fillBoardCol(board, 3);
+        fillBoardCol(testBoard, 2);
 
-        assertFalse(moveValidator.isValid(board, 4));
+        assertFalse(moveValidator.isValid(testBoard, 2));
     }
 
     // fills a single column of the board with testDiscs
-    void fillBoardCol(Board board, int col){
+    void fillBoardCol(Boardable board, int col){
         TestClasses.TestDisc testDisc = new TestClasses.TestDisc();
-        for(int i = 0; i < board.grid.length; i++){
+        for(int i = 0; i < board.getGrid().length; i++){
             board.addDisc(testDisc, col);
         }
 

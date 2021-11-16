@@ -12,12 +12,12 @@ public class Presenter {
     public static final String ANSI_WHITE = "\u001B[37m";
 
 
-    public static void printBoard(Displayable display, Board board){
+    public static void printBoard(Displayable display, Boardable board){
         Discable disc;
 
-        for(int i = 0; i < board.grid.length; i++){
-            for(int j = 0; j < board.grid[0].length; j++){
-                disc = board.grid[i][j];
+        for(int i = 0; i < board.getGrid().length; i++){
+            for(int j = 0; j < board.getRow(0).length; j++){
+                disc = board.findDisc(i,j);
                 display.print("| ");
                 printDisc(display, disc);
                 display.print(" |");
