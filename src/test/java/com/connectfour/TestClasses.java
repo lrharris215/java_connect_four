@@ -20,7 +20,7 @@ public class TestClasses {
     public static class TestPlayer implements Playerable {
 
         @Override
-        public void takeTurn(Displayable display, Board board) {
+        public void takeTurn(Displayable display, Boardable board) {
 
         }
 
@@ -46,7 +46,7 @@ public class TestClasses {
     public static class TestValidator implements Validator {
 
         @Override
-        public boolean isValid(Board board, int column) {
+        public boolean isValid(Boardable board, int column) {
             return true;
         }
     }

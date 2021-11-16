@@ -8,10 +8,11 @@ public class Game {
 
     // instance vars
     Displayable display;
-    Board board;
+    Boardable board;
     Playerable playerOne;
 
-    public Game(Displayable display, Board board, Playerable playerOne){
+
+    public Game(Displayable display, Boardable board, Playerable playerOne){
         this.display = display;
         this.playerOne = playerOne;
         this.board = board;
