@@ -18,13 +18,13 @@ public class Player implements Playerable{
 
     }
 
-    public void takeTurn(Displayable display, Boardable board){
+    public int getInput(Displayable display, Boardable board){
         int colChoice = scanner.getColumn();
         while(!moveValidator.isValid(board, colChoice)){
             Presenter.printError(display, VALIDATION_ERROR);
             colChoice = scanner.getColumn();
         }
-        board.addDisc(disc, colChoice);
+        return colChoice;
     }
 
     @Override

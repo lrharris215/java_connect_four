@@ -32,8 +32,7 @@ public class Game {
     private void nextTurn(Playerable player){
         display.println(player.getName() + PLAYER_CHOICE);
         display.println(DISC_COLOR + player.getDisc().getColor());
-        player.takeTurn(display, board);
+        int nextCol = player.getInput(display, board);
+        board.addDisc(player.getDisc(), nextCol);
     }
-
-
 }

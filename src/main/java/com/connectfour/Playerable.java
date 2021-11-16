@@ -1,7 +1,8 @@
 package com.connectfour;
 
 public interface Playerable {
-    public void takeTurn(Displayable display, Boardable board);
-    public String getName();
-    public Discable getDisc();
+    String getName();
+    Discable getDisc();
+
+    int getInput(Displayable display, Boardable board);
 }

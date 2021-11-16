@@ -19,7 +19,7 @@ class PlayerTest {
     Displayable testDisplay;
 
     @Test
-    void testTakeTurn() {
+    void testGetInput(){
         testDisc = new TestClasses.TestDisc();
         testScanner = new TestClasses.TestScanner();
         testValidator = new TestClasses.TestValidator();
@@ -27,9 +27,6 @@ class PlayerTest {
         testPlayer = new Player("Test", testDisc, testScanner, testValidator);
         testBoard = new Board();
 
-
-        testPlayer.takeTurn(testDisplay, testBoard);
-
-        assertEquals(testBoard.findDisc(5,0), testPlayer.getDisc());
+        assertEquals(1, testPlayer.getInput(testDisplay, testBoard));
     }
 }
