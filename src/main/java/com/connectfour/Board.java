@@ -1,6 +1,6 @@
 package com.connectfour;
 
-public class Board {
+public class Board implements Boardable{
     // Board should consist of a matrix of Discables.
     Discable[][] grid;
     public Board(){
@@ -15,8 +15,8 @@ public class Board {
         // adds a disc to a column in the grid.
         // takes in a column, needs to figure out how far down the piece goes.
         for(int row = grid.length - 1; row >= 0; row--){
-            if(isEmpty(row, col)){
-                grid[row][col] = disc;
+            if(isEmpty(row, col - 1)){
+                grid[row][col - 1] = disc;
                 break;
             }
         }
@@ -24,6 +24,14 @@ public class Board {
 
     public Discable findDisc(int row, int col){
         return grid[row][col];
+    }
+
+    public Discable[][] getGrid(){
+        return grid;
+    }
+
+    public Discable[] getRow(int row){
+        return grid[row];
     }
 
     public void setUpGrid() {
@@ -35,7 +43,8 @@ public class Board {
        }
     }
 
-    private boolean isEmpty(int row, int col){
+
+    public boolean isEmpty(int row, int col){
         return grid[row][col] == NullDisc.getNullDisc();
     }
 

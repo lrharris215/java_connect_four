@@ -20,8 +20,8 @@ public class TestClasses {
     public static class TestPlayer implements Playerable {
 
         @Override
-        public void takeTurn(Board board) {
-
+        public int getInput(Displayable display, Boardable board){
+            return 1;
         }
 
         @Override
@@ -33,6 +33,11 @@ public class TestClasses {
         public Discable getDisc() {
             return new TestDisc();
         }
+
+        @Override
+        public String getDiscColor() {
+            return "Test Color";
+        }
     }
 
     public static class TestScanner implements Scannable {
@@ -40,6 +45,14 @@ public class TestClasses {
         @Override
         public int getColumn() {
             return 1;
+        }
+    }
+
+    public static class TestValidator implements Validator {
+
+        @Override
+        public boolean isValid(Boardable board, int column) {
+            return true;
         }
     }
 

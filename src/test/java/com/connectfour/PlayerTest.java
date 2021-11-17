@@ -11,21 +11,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
-    TestClasses.TestDisc testDisc;
-    TestClasses.TestScanner testScanner;
-    Player testPlayer;
-    Board board;
-
+    Discable testDisc;
+    Scannable testScanner;
+    Playerable testPlayer;
+    Boardable testBoard;
+    Validator testValidator;
+    Displayable testDisplay;
 
     @Test
-    void testTakeTurn() {
+    void testGetInput(){
         testDisc = new TestClasses.TestDisc();
         testScanner = new TestClasses.TestScanner();
-        testPlayer = new Player("Test", testDisc, testScanner);
-        board = new Board();
+        testValidator = new TestClasses.TestValidator();
+        testDisplay = new TestClasses.TestDisplay();
+        testPlayer = new Player("Test", testDisc, testScanner, testValidator);
+        testBoard = new Board();
 
-        testPlayer.takeTurn(board);
-
-        assertEquals(board.grid[5][0], testPlayer.disc);
+        assertEquals(1, testPlayer.getInput(testDisplay, testBoard));
     }
 }

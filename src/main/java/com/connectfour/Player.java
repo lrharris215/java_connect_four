@@ -3,21 +3,29 @@ package com.connectfour;
 import java.util.Scanner;
 
 public class Player implements Playerable{
+
+
     Discable disc;
     Scannable scanner;
     String name;
+    Validator moveValidator;
 
-    public Player(String name, Discable disc, Scannable scanner){
+    public Player(String name, Discable disc, Scannable scanner, Validator moveValidator){
         this.disc = disc;
         this.scanner = scanner;
         this.name = name;
+        this.moveValidator = moveValidator;
 
     }
 
-    public void takeTurn(Board board){
+    @Override
+    public int getInput(Displayable display, Boardable board){
         int colChoice = scanner.getColumn();
-        colChoice = colChoice - 1;
-        placeDisc(board, colChoice);
+        while(!moveValidator.isValid(board, colChoice)){
+            Presenter.printError(display, Constants.VALIDATION_ERROR);
+            colChoice = scanner.getColumn();
+        }
+        return colChoice;
     }
 
     @Override
@@ -30,9 +38,6 @@ public class Player implements Playerable{
         return disc;
     }
 
-
-    private void placeDisc(Board board, int col){
-        board.addDisc(disc, col);
-    }
-
+    @Override
+    public String getDiscColor(){ return disc.getColor(); }
 }
