@@ -26,6 +26,7 @@ public class Game {
 
     public void play(){
         Presenter.printBoard(display, board);
+        // Will replace w/ gameOver check later
         for(int i = 0; i < 10; i++){
             nextTurn(activePlayer);
             Presenter.printBoard(display, board);
@@ -35,7 +36,6 @@ public class Game {
 
     private void nextTurn(Playerable player){
         display.println(player.getName() + Constants.PLAYER_CHOICE);
-        //TODO player.getColor
         display.println(Constants.DISC_COLOR + player.getDiscColor());
         int nextCol = player.getInput(display, board);
         board.addDisc(player.getDisc(), nextCol);
