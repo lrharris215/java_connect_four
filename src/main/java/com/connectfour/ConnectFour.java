@@ -18,21 +18,25 @@ public class ConnectFour {
         PlayerScanner playerScanner;
         Board board;
         Disc disc1;
+        Disc disc2;
         Validator moveValidator;
 
         Player playerOne;
+        Player playerTwo;
 
         display = new Display(System.out);
         scanner = new Scanner(System.in);
         playerScanner = new PlayerScanner(scanner);
         moveValidator = new MoveValidator();
         disc1 = new Disc("red");
+        disc2 = new Disc("blue");
+
         board = new Board();
 
-
         playerOne = new Player("Player One", disc1, playerScanner, moveValidator);
+        playerTwo = new Player("Player Two", disc2, playerScanner, moveValidator);
 
-        return new Game(display, board, playerOne);
+        return new Game(display, board, playerOne, playerTwo);
     }
 
 }
