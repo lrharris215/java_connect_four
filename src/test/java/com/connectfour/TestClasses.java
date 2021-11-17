@@ -17,6 +17,49 @@ public class TestClasses {
             return "black";
         }
     }
+
+    public static class TestBoard implements Boardable {
+        Discable[][] grid;
+
+        public TestBoard(){
+            grid = new Discable[4][4];
+            setUpGrid();
+        }
+
+        public void addDisc(Discable disc, int col) {
+
+        }
+
+        public void addDisc(Discable disc, int row, int col){
+            grid[row][col] = disc;
+        }
+
+        public Discable findDisc(int row, int col) {
+            return grid[row][col];
+        }
+
+        public boolean isEmpty(int row, int col) {
+            return grid[row][col] == NullDisc.getNullDisc();
+        }
+
+        public void setUpGrid() {
+            for(int i = 0; i < grid.length; i++){
+                for(int j = 0; j < grid[0].length; j++){
+                    grid[i][j] = NullDisc.getNullDisc();
+                }
+            }
+        }
+
+        public Discable[][] getGrid() {
+            return new Discable[0][];
+        }
+
+        public Discable[] getRow(int row) {
+            return new Discable[0];
+        }
+
+    }
+
     public static class TestPlayer implements Playerable {
 
         @Override

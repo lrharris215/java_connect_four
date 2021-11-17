@@ -1,7 +1,7 @@
 package com.connectfour;
 
 public class VerticalChecker implements Checker{
-    public boolean isGameOver(Board board) {
+    public boolean isGameOver(Boardable board) {
         return false;
     }
 }

@@ -1,7 +1,7 @@
 package com.connectfour;
 
 public class HorizontalChecker implements Checker {
-    public boolean isGameOver(Board board) {
+    public boolean isGameOver(Boardable board) {
         // checks grid from bottom to top
         for(int row = board.getGrid().length - 1; row >= 0; row--){
             int count = 1;
