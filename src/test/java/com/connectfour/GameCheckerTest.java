@@ -36,7 +36,20 @@ class GameCheckerTest {
     }
 
     @Test
-    void testVerticalWin() {
+    void testVerticalWinReturnsTrueIfFourInARow() {
+        setVerticalWin(board);
+        assertTrue(gameChecker.verticalWin(board));
+    }
+
+    @Test
+    void testVerticalWinReturnsFalseIfEmpty() {
+        assertFalse(gameChecker.verticalWin(board));
+    }
+
+    @Test
+    void testVerticalWinReturnsFalseIfMixedDiscs(){
+        setUpFailingVerticalTest(board);
+        assertFalse(gameChecker.verticalWin(board));
     }
 
     @Test
@@ -67,5 +80,25 @@ class GameCheckerTest {
         board.addDisc(testDisc2, 5);
         board.addDisc(testDisc2, 6);
         board.addDisc(testDisc1, 7);
+    }
+
+    void setVerticalWin(Board board){
+        Discable testDisc = new TestClasses.TestDisc();
+        board.addDisc(testDisc, 1);
+        board.addDisc(testDisc, 1);
+        board.addDisc(testDisc, 1);
+        board.addDisc(testDisc, 1);
+    }
+
+    void setUpFailingVerticalTest(Board board){
+        Discable testDisc1 = new TestClasses.TestDisc();
+        Discable testDisc2 = new Disc("blue");
+
+        board.addDisc(testDisc1, 1);
+        board.addDisc(testDisc1, 1);
+        board.addDisc(testDisc1, 1);
+        board.addDisc(testDisc2, 1);
+        board.addDisc(testDisc2, 1);
+        board.addDisc(testDisc2, 1);
     }
 }
