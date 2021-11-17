@@ -25,8 +25,14 @@ class GameCheckerTest {
     }
 
     @Test
-    void testHorizontalWinReturnsFalseIfNot4InARow(){
+    void testHorizontalWinReturnsFalseIfBoardEmpty(){
+        assertFalse(gameChecker.horizontalWin(board));
+    }
 
+    @Test
+    void testHorizontalWinnerReturnsFalseIfMixedDiscs(){
+        setUpFailingHorizontalTest(board);
+        assertFalse(gameChecker.horizontalWin(board));
     }
 
     @Test
@@ -48,5 +54,18 @@ class GameCheckerTest {
         board.addDisc(testDisc, 2);
         board.addDisc(testDisc, 3);
         board.addDisc(testDisc, 4);
+    }
+
+    void setUpFailingHorizontalTest(Board board){
+        Discable testDisc1 = new TestClasses.TestDisc();
+        Discable testDisc2 = new Disc("blue");
+
+        board.addDisc(testDisc1, 1);
+        board.addDisc(testDisc1, 2);
+        board.addDisc(testDisc1, 3);
+        board.addDisc(testDisc2, 4);
+        board.addDisc(testDisc2, 5);
+        board.addDisc(testDisc2, 6);
+        board.addDisc(testDisc1, 7);
     }
 }
