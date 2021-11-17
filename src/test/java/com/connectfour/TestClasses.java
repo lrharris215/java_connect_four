@@ -27,7 +27,6 @@ public class TestClasses {
         }
 
         public void addDisc(Discable disc, int col) {
-
         }
 
         public void addDisc(Discable disc, int row, int col){
@@ -51,11 +50,11 @@ public class TestClasses {
         }
 
         public Discable[][] getGrid() {
-            return new Discable[0][];
+            return grid;
         }
 
         public Discable[] getRow(int row) {
-            return new Discable[0];
+            return grid[row];
         }
 
     }

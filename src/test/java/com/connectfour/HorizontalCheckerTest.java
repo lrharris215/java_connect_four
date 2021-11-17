@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class HorizontalCheckerTest {
-    Board board;
+    Boardable board;
     Checker horizontalChecker;
 
     @BeforeEach
     void initBoardAndGameChecker(){
-        board = new Board();
+        board = new TestClasses.TestBoard();
         horizontalChecker = new HorizontalChecker();
 
     }
@@ -37,24 +37,25 @@ class HorizontalCheckerTest {
     }
 
     // helper methods
-    void setHorizontalWinner(Board board){
+    void setHorizontalWinner(Boardable board){
         Discable testDisc = new TestClasses.TestDisc();
-        board.addDisc(testDisc, 1);
-        board.addDisc(testDisc, 2);
-        board.addDisc(testDisc, 3);
-        board.addDisc(testDisc, 4);
+        board.addDisc(testDisc, 3,0);
+        board.addDisc(testDisc, 3,1);
+        board.addDisc(testDisc, 3,2);
+        board.addDisc(testDisc, 3,3);
+
     }
 
-    void setUpFailingHorizontalTest(Board board){
+    void setUpFailingHorizontalTest(Boardable board){
         Discable testDisc1 = new TestClasses.TestDisc();
         Discable testDisc2 = new Disc("blue");
 
-        board.addDisc(testDisc1, 1);
-        board.addDisc(testDisc1, 2);
-        board.addDisc(testDisc1, 3);
-        board.addDisc(testDisc2, 4);
-        board.addDisc(testDisc2, 5);
-        board.addDisc(testDisc2, 6);
-        board.addDisc(testDisc1, 7);
+
+        board.addDisc(testDisc2, 3,0);
+        board.addDisc(testDisc1, 3,1);
+        board.addDisc(testDisc1, 3,2);
+        board.addDisc(testDisc1, 3,3);
+
+
     }
 }

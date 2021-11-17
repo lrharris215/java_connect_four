@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class VerticalCheckerTest {
 
-    Board board;
+    Boardable board;
     Checker verticalChecker;
 
     @BeforeEach
     void initBoardAndGameChecker(){
-        board = new Board();
+        board = new TestClasses.TestBoard();
         verticalChecker = new VerticalChecker();
 
     }
@@ -34,23 +34,22 @@ class VerticalCheckerTest {
     }
 
     // helper methods
-    void setVerticalWin(Board board){
+    void setVerticalWin(Boardable board){
         Discable testDisc = new TestClasses.TestDisc();
-        board.addDisc(testDisc, 1);
-        board.addDisc(testDisc, 1);
-        board.addDisc(testDisc, 1);
-        board.addDisc(testDisc, 1);
+        board.addDisc(testDisc, 0,1);
+        board.addDisc(testDisc, 1,1);
+        board.addDisc(testDisc, 2,1);
+        board.addDisc(testDisc, 3,1);
     }
 
-    void setUpFailingVerticalTest(Board board){
+    void setUpFailingVerticalTest(Boardable board){
         Discable testDisc1 = new TestClasses.TestDisc();
         Discable testDisc2 = new Disc("blue");
 
-        board.addDisc(testDisc1, 1);
-        board.addDisc(testDisc1, 1);
-        board.addDisc(testDisc1, 1);
-        board.addDisc(testDisc2, 1);
-        board.addDisc(testDisc2, 1);
-        board.addDisc(testDisc2, 1);
+        board.addDisc(testDisc1, 0,1);
+        board.addDisc(testDisc1, 1,1);
+        board.addDisc(testDisc1, 2,1);
+        board.addDisc(testDisc2, 3,1);
+
     }
 }
