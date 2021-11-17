@@ -30,14 +30,12 @@ public class Game {
     }
 
     public void play(){
-
+        Presenter.printBoard(display, board);
         for(int i = 0; i < 10; i++){
-            Presenter.printBoard(display, board);
             nextTurn(activePlayer);
+            Presenter.printBoard(display, board);
             switchPlayers();
         }
-        Presenter.printBoard(display, board);
-
     }
 
     private void nextTurn(Playerable player){
