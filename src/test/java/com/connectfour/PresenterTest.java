@@ -18,7 +18,7 @@ class PresenterTest {
     @Test
     void testPrintBoard() {
 
-        Boardable board = new TestClasses.TestBoard();
+        Boardable board = new Board();
         Presenter.printBoard(testDisplay, board);
 
         assertEquals("  1    2    3    4    5    6    7 ", testDisplay.getLastString());

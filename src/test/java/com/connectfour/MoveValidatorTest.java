@@ -13,7 +13,7 @@ class MoveValidatorTest {
     @BeforeEach
     void initBoardAndValidator(){
         moveValidator = new MoveValidator();
-        testBoard = new TestClasses.TestBoard();
+        testBoard = new Board();
     }
 
     @Test

@@ -16,7 +16,7 @@ class GameTest {
     void initAllTestClasses(){
         testDisplay = new TestClasses.TestDisplay();
         testPlayer = new TestClasses.TestPlayer();
-        testBoard = new TestClasses.TestBoard();
+        testBoard = new Board();
         testValidator = new TestClasses.TestValidator();
 
 
@@ -29,7 +29,7 @@ class GameTest {
     void testStartDisplaysWelcomeMessage() {
         game.start();
 
-        assertEquals(testDisplay.getLastString(), game.WELCOME);
+        assertEquals(testDisplay.getLastString(), Constants.WELCOME);
     }
 
     @Test
