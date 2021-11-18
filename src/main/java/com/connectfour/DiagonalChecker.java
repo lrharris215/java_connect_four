@@ -16,6 +16,8 @@ public class DiagonalChecker implements Checker{
 
     private boolean isRightDiagonal(Boardable board){
         // (-1, +1) pattern
+        boolean isFourInARow = false;
+
         for(int row = board.getGrid().length - 1; row >= 0; row--){
             for(int col = 0; col < board.getRow(row).length; col++){
                 Discable currentDisc = board.findDisc(row, col);
@@ -24,9 +26,6 @@ public class DiagonalChecker implements Checker{
                 for(int i = 1; i < 4; i++){
                     int nextRow = row - i;
                     int nextCol = col + i;
-
-                    System.out.println("nextRow: " + nextRow);
-                    System.out.println("nextCol: " + nextCol);
                     if(!moveValidator.isValid(board, nextRow, nextCol)){
                         break;
                     }else {
@@ -35,17 +34,19 @@ public class DiagonalChecker implements Checker{
                             break;
                         }
                         if( i == 3){
-                            return true;
+                            isFourInARow =  true;
                         }
                     }
                 }
             }
         }
-
-        return false;
+        return isFourInARow;
     }
 
     private boolean isLeftDiagonal(Boardable board){
+        // (-1, -1) pattern
+
+        boolean isFourInARow =  false;
         for(int row = board.getGrid().length - 1; row >= 0; row--){
             for(int col = board.getRow(row).length - 1; col >= 0; col--){
                 Discable currentDisc = board.findDisc(row, col);
@@ -54,9 +55,6 @@ public class DiagonalChecker implements Checker{
                 for(int i = 1; i < 4; i++){
                     int nextRow = row - i;
                     int nextCol = col - i;
-
-                    System.out.println("nextRow: " + nextRow);
-                    System.out.println("nextCol: " + nextCol);
                     if(!moveValidator.isValid(board, nextRow, nextCol)){
                         break;
                     }else {
@@ -65,14 +63,13 @@ public class DiagonalChecker implements Checker{
                             break;
                         }
                         if( i == 3){
-                            return true;
+                            isFourInARow = true;
                         }
                     }
                 }
             }
         }
-
-        return false;
+        return isFourInARow;
     }
 
 }
