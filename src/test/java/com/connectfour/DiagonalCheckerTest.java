@@ -70,6 +70,11 @@ class DiagonalCheckerTest {
         board.addDisc(testDisc, 1, 1);
         board.addDisc(testDisc2, 2, 2);
         board.addDisc(testDisc, 3, 3);
+
+        board.addDisc(testDisc, 3, 0);
+        board.addDisc(testDisc, 1, 2);
+        board.addDisc(testDisc2, 2, 1);
+        board.addDisc(testDisc, 0, 3);
     }
 
 }

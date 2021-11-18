@@ -46,6 +46,32 @@ public class DiagonalChecker implements Checker{
     }
 
     private boolean isLeftDiagonal(Boardable board){
+        for(int row = board.getGrid().length - 1; row >= 0; row--){
+            for(int col = board.getRow(row).length - 1; col >= 0; col--){
+                Discable currentDisc = board.findDisc(row, col);
+                if(currentDisc == NullDisc.getNullDisc()) {continue;}
+                Discable nextDisc;
+                for(int i = 1; i < 4; i++){
+                    int nextRow = row - i;
+                    int nextCol = col - i;
+
+                    System.out.println("nextRow: " + nextRow);
+                    System.out.println("nextCol: " + nextCol);
+                    if(!moveValidator.isValid(board, nextRow, nextCol)){
+                        break;
+                    }else {
+                        nextDisc = board.findDisc(nextRow, nextCol);
+                        if(currentDisc != nextDisc){
+                            break;
+                        }
+                        if( i == 3){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
         return false;
     }
 
