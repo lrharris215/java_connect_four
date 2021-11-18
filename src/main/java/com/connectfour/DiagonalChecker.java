@@ -47,6 +47,7 @@ public class DiagonalChecker implements Checker{
         // (-1, -1) pattern
 
         boolean isFourInARow =  false;
+
         for(int row = board.getGrid().length - 1; row >= 0; row--){
             for(int col = board.getRow(row).length - 1; col >= 0; col--){
                 Discable currentDisc = board.findDisc(row, col);

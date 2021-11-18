@@ -7,14 +7,18 @@ public class Game {
     Playerable playerOne;
     Playerable playerTwo;
     Playerable activePlayer;
+    Checker[] checkers;
+
+    boolean gameOver;
 
 
-    public Game(Displayable display, Boardable board, Playerable playerOne, Playerable playerTwo){
+    public Game(Displayable display, Boardable board, Checker[] checkers, Playerable playerOne, Playerable playerTwo){
 
         this.display = display;
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         this.board = board;
+        this.checkers = checkers;
 
         activePlayer = playerOne;
 
@@ -27,7 +31,8 @@ public class Game {
     public void play(){
         Presenter.printBoard(display, board);
         // Will replace w/ gameOver check later
-        for(int i = 0; i < 10; i++){
+
+        while(!isGameOver()){
             nextTurn(activePlayer);
             Presenter.printBoard(display, board);
             switchPlayers();
@@ -43,5 +48,14 @@ public class Game {
 
     private void switchPlayers(){
         activePlayer = activePlayer == playerOne ? playerTwo : playerOne;
+    }
+
+    private boolean isGameOver() {
+        for (Checker checker : checkers) {
+            if (checker.isGameOver(board)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

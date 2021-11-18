@@ -3,6 +3,7 @@ package com.connectfour;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class TestClasses {
     public static class TestDisc implements Discable {
@@ -165,5 +166,12 @@ public class TestClasses {
 
     }
 
+    public static class TestChecker implements Checker {
+
+        public boolean isGameOver(Boardable board) {
+            int num = (int) Math.floor(Math.random() * 11);
+            return num >= 7;
+        }
+    }
 
 }

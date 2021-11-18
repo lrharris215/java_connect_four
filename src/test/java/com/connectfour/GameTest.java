@@ -11,6 +11,7 @@ class GameTest {
     Boardable testBoard;
     Game game;
     Validator testValidator;
+    Checker[] checkers;
 
     @BeforeEach
     void initAllTestClasses(){
@@ -18,10 +19,9 @@ class GameTest {
         testPlayer = new TestClasses.TestPlayer();
         testBoard = new Board();
         testValidator = new TestClasses.TestValidator();
+        checkers = new Checker[] {new TestClasses.TestChecker()};
 
-
-
-        game = new Game(testDisplay, testBoard, testPlayer, testPlayer );
+        game = new Game(testDisplay, testBoard, checkers, testPlayer, testPlayer );
 
     }
 

@@ -20,6 +20,7 @@ public class ConnectFour {
         Disc disc1;
         Disc disc2;
         Validator moveValidator;
+        Checker[] checkers;
 
         Player playerOne;
         Player playerTwo;
@@ -28,6 +29,7 @@ public class ConnectFour {
         scanner = new Scanner(System.in);
         playerScanner = new PlayerScanner(scanner);
         moveValidator = new MoveValidator();
+        checkers = new Checker[] {new HorizontalChecker(), new VerticalChecker(), new DiagonalChecker(moveValidator)};
         disc1 = new Disc("red");
         disc2 = new Disc("blue");
 
@@ -36,7 +38,7 @@ public class ConnectFour {
         playerOne = new Player("Player One", disc1, playerScanner, moveValidator);
         playerTwo = new Player("Player Two", disc2, playerScanner, moveValidator);
 
-        return new Game(display, board, playerOne, playerTwo);
+        return new Game(display, board, checkers, playerOne, playerTwo);
     }
 
 }
