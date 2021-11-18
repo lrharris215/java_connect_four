@@ -96,6 +96,8 @@ public class TestClasses {
         public boolean isValid(Boardable board, int column) {
             return true;
         }
+
+        public boolean isValid(Boardable board, int row, int col) { return true; }
     }
 
     public static class TestStream extends PrintStream {
