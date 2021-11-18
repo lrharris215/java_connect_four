@@ -37,6 +37,7 @@ public class Game {
             Presenter.printBoard(display, board);
             switchPlayers();
         }
+        gameOver();
     }
 
     private void nextTurn(Playerable player){
@@ -57,5 +58,10 @@ public class Game {
             }
         }
         return false;
+    }
+
+    private void gameOver(){
+        switchPlayers();
+        Presenter.printWinner(display, activePlayer.getName());
     }
 }

@@ -1,10 +1,13 @@
 package com.connectfour;
 
+import static com.connectfour.Constants.*;
+
 public class Presenter {
 
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
 
     public static void printBoard(Displayable display, Boardable board){
         Discable disc;
@@ -38,5 +41,7 @@ public class Presenter {
         display.println(ANSI_RED + error + ANSI_RESET);
     }
 
-
+    public static void printWinner(Displayable display, String winner){
+        display.println(ANSI_GREEN + "\n" + CONGRATS + winner + WON_THE_GAME + ANSI_RESET);
+    }
 }
