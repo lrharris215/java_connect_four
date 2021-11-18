@@ -12,13 +12,20 @@ class DiagonalCheckerTest {
     @BeforeEach
     void initBoardAndGameChecker(){
         board = new TestClasses.TestBoard();
-        diagonalChecker = new DiagonalChecker();
+        diagonalChecker = new DiagonalChecker(new MoveValidator());
 
     }
 
     @Test
-    void testIsGameOverReturnsTrueIf4InARowDiagonally(){
-        setDiagonalWin(board);
+    void testIsGameOverReturnsTrueIf4InARowUpLeft(){
+        setLeftDiagonalWin(board);
+
+        assertTrue(diagonalChecker.isGameOver(board));
+    }
+
+    @Test
+    void testIsGameOverReturnsTrueIf4InARowUpRight(){
+        setRightDiagonalWin(board);
 
         assertTrue(diagonalChecker.isGameOver(board));
     }
@@ -37,7 +44,7 @@ class DiagonalCheckerTest {
 
     //helper methods
 
-    void setDiagonalWin(Boardable board){
+    void setLeftDiagonalWin(Boardable board){
         Discable testDisc = new TestClasses.TestDisc();
 
         board.addDisc(testDisc, 0, 0);
@@ -45,6 +52,15 @@ class DiagonalCheckerTest {
         board.addDisc(testDisc, 2, 2);
         board.addDisc(testDisc, 3, 3);
 
+    }
+
+    void setRightDiagonalWin(Boardable board){
+        Discable testDisc = new TestClasses.TestDisc();
+
+        board.addDisc(testDisc, 3, 0);
+        board.addDisc(testDisc, 2, 1);
+        board.addDisc(testDisc, 1, 2);
+        board.addDisc(testDisc, 0, 3);
     }
 
     void setUpMixedDiagonal(Boardable board){
