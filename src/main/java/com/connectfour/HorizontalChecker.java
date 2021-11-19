@@ -1,6 +1,8 @@
 package com.connectfour;
 
 public class HorizontalChecker implements Checker {
+
+
     public boolean isGameOver(Boardable board) {
         // checks grid from bottom to top
 
@@ -15,6 +17,7 @@ public class HorizontalChecker implements Checker {
                     count += 1;
                     if (count == 4){
                         return true;
+
                     }
                 } else {
                     count = 1;
@@ -23,4 +26,9 @@ public class HorizontalChecker implements Checker {
         }
         return false;
     }
+
+    public boolean isTie() {
+        return false;
+    }
+    public void setTie(Boolean bool){}
 }

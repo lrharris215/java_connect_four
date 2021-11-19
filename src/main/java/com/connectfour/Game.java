@@ -60,8 +60,13 @@ public class Game {
         return false;
     }
 
-    private void gameOver(){
-        switchPlayers();
-        Presenter.printWinner(display, activePlayer.getName());
+    public void gameOver(){
+       Checker tieChecker = checkers[checkers.length - 1];
+       if(tieChecker.isTie()){
+           Presenter.printTie(display);
+       }else {
+           switchPlayers();
+           Presenter.printWinner(display, activePlayer.getName());
+       }
     }
 }

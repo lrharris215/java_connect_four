@@ -44,4 +44,8 @@ public class Presenter {
     public static void printWinner(Displayable display, String winner){
         display.println(ANSI_GREEN + "\n" + CONGRATS + winner + WON_THE_GAME + ANSI_RESET);
     }
+
+    public static void printTie(Displayable display){
+        display.println(ANSI_GREEN + "\n" + TIE + ANSI_RESET);
+    }
 }

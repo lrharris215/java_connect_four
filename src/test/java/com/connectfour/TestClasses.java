@@ -34,6 +34,13 @@ public class TestClasses {
             grid[row][col] = disc;
         }
 
+        public void addRow(int row, Discable disc1, Discable disc2, Discable disc3, Discable disc4){
+            grid[row][0] = disc1;
+            grid[row][1] = disc2;
+            grid[row][2] = disc3;
+            grid[row][3] = disc4;
+        }
+
         public Discable findDisc(int row, int col) {
             return grid[row][col];
         }
@@ -167,10 +174,17 @@ public class TestClasses {
     }
 
     public static class TestChecker implements Checker {
-
+        Boolean isTie = false;
         public boolean isGameOver(Boardable board) {
             int num = (int) Math.floor(Math.random() * 11);
             return num >= 7;
+        }
+
+        public boolean isTie() {
+            return isTie;
+        }
+        public void setTie(Boolean bool){
+            isTie = bool;
         }
     }
 

@@ -24,6 +24,8 @@ public class Board implements Boardable{
 
     public void addDisc(Discable disc, int row, int col){}
 
+    public void addRow(int row, Discable disc1, Discable disc2, Discable disc3, Discable disc4) {}
+
     public Discable findDisc(int row, int col){
         return grid[row][col];
     }

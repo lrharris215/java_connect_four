@@ -21,4 +21,9 @@ public class VerticalChecker implements Checker{
         }
         return false;
     }
+
+    public boolean isTie() {
+        return false;
+    }
+    public void setTie(Boolean bool){}
 }

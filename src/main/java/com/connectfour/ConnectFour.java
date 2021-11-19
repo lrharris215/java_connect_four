@@ -29,7 +29,7 @@ public class ConnectFour {
         scanner = new Scanner(System.in);
         playerScanner = new PlayerScanner(scanner);
         moveValidator = new MoveValidator();
-        checkers = new Checker[] {new HorizontalChecker(), new VerticalChecker(), new DiagonalChecker(moveValidator)};
+        checkers = new Checker[] {new HorizontalChecker(), new VerticalChecker(), new DiagonalChecker(moveValidator), new TieChecker()};
         disc1 = new Disc("red");
         disc2 = new Disc("blue");
 
