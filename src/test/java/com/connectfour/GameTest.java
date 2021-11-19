@@ -3,6 +3,8 @@ package com.connectfour;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static com.connectfour.Constants.CONGRATS;
+import static com.connectfour.Constants.WON_THE_GAME;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
@@ -11,6 +13,7 @@ class GameTest {
     Boardable testBoard;
     Game game;
     Validator testValidator;
+    Checker[] checkers;
 
     @BeforeEach
     void initAllTestClasses(){
@@ -18,10 +21,9 @@ class GameTest {
         testPlayer = new TestClasses.TestPlayer();
         testBoard = new Board();
         testValidator = new TestClasses.TestValidator();
+        checkers = new Checker[] {new TestClasses.TestChecker()};
 
-
-
-        game = new Game(testDisplay, testBoard, testPlayer, testPlayer );
+        game = new Game(testDisplay, testBoard, checkers, testPlayer, testPlayer );
 
     }
 
@@ -35,8 +37,8 @@ class GameTest {
     @Test
     void testPlayPrintsTheBoard() {
         game.play();
-
-        assertEquals(testDisplay.getLastString(),"  1    2    3    4    5    6    7 ");
+        System.out.println(testDisplay.stringState);
+        assertEquals(testDisplay.getLastString(),Presenter.ANSI_GREEN + "\n" + CONGRATS + null + WON_THE_GAME + Presenter.ANSI_RESET);
     }
 
 }

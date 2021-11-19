@@ -3,6 +3,7 @@ package com.connectfour;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class TestClasses {
     public static class TestDisc implements Discable {
@@ -17,6 +18,48 @@ public class TestClasses {
             return "black";
         }
     }
+
+    public static class TestBoard implements Boardable {
+        Discable[][] grid;
+
+        public TestBoard(){
+            grid = new Discable[4][4];
+            setUpGrid();
+        }
+
+        public void addDisc(Discable disc, int col) {
+        }
+
+        public void addDisc(Discable disc, int row, int col){
+            grid[row][col] = disc;
+        }
+
+        public Discable findDisc(int row, int col) {
+            return grid[row][col];
+        }
+
+        public boolean isEmpty(int row, int col) {
+            return grid[row][col] == NullDisc.getNullDisc();
+        }
+
+        public void setUpGrid() {
+            for(int i = 0; i < grid.length; i++){
+                for(int j = 0; j < grid[0].length; j++){
+                    grid[i][j] = NullDisc.getNullDisc();
+                }
+            }
+        }
+
+        public Discable[][] getGrid() {
+            return grid;
+        }
+
+        public Discable[] getRow(int row) {
+            return grid[row];
+        }
+
+    }
+
     public static class TestPlayer implements Playerable {
 
         @Override
@@ -54,6 +97,8 @@ public class TestClasses {
         public boolean isValid(Boardable board, int column) {
             return true;
         }
+
+        public boolean isValid(Boardable board, int row, int col) { return true; }
     }
 
     public static class TestStream extends PrintStream {
@@ -121,5 +166,12 @@ public class TestClasses {
 
     }
 
+    public static class TestChecker implements Checker {
+
+        public boolean isGameOver(Boardable board) {
+            int num = (int) Math.floor(Math.random() * 11);
+            return num >= 7;
+        }
+    }
 
 }
