@@ -9,9 +9,6 @@ public class Game {
     Playerable activePlayer;
     Checker[] checkers;
 
-    boolean gameOver;
-
-
     public Game(Displayable display, Boardable board, Checker[] checkers, Playerable playerOne, Playerable playerTwo){
 
         this.display = display;
@@ -30,7 +27,6 @@ public class Game {
 
     public void play(){
         Presenter.printBoard(display, board);
-        // Will replace w/ gameOver check later
 
         while(!isGameOver()){
             nextTurn(activePlayer);

@@ -9,8 +9,6 @@ public class Board implements Boardable{
         setUpGrid();
     }
 
-    // methods
-
     public void addDisc(Discable disc, int col){
         // adds a disc to a column in the grid.
         // takes in a column, needs to figure out how far down the piece goes.
@@ -21,10 +19,6 @@ public class Board implements Boardable{
             }
         }
     }
-
-    public void addDisc(Discable disc, int row, int col){}
-
-    public void addRow(int row, Discable disc1, Discable disc2, Discable disc3, Discable disc4) {}
 
     public Discable findDisc(int row, int col){
         return grid[row][col];
@@ -38,6 +32,10 @@ public class Board implements Boardable{
         return grid[row];
     }
 
+    public boolean isEmpty(int row, int col){
+        return grid[row][col] == NullDisc.getNullDisc();
+    }
+
     public void setUpGrid() {
         // initial blank state of the board.
        for(int i = 0; i < grid.length; i++){
@@ -47,9 +45,10 @@ public class Board implements Boardable{
        }
     }
 
-    public boolean isEmpty(int row, int col){
-        return grid[row][col] == NullDisc.getNullDisc();
-    }
 
+    // Functions for TestBoard
+    public void addDisc(Discable disc, int row, int col){}
+
+    public void addRow(int row, Discable disc1, Discable disc2, Discable disc3, Discable disc4) {}
 
 }

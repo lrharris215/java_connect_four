@@ -9,7 +9,4 @@ public  class Constants {
     public static final String CONGRATS = "Congratulations! ";
     public static final String WON_THE_GAME = " has won the game!!";
     public static final String TIE = "The game is a tie!";
-
-
-    // Colors
 }
