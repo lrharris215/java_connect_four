@@ -174,14 +174,17 @@ public class TestClasses {
     }
 
     public static class TestChecker implements Checker {
-
+        Boolean isTie = false;
         public boolean isGameOver(Boardable board) {
             int num = (int) Math.floor(Math.random() * 11);
             return num >= 7;
         }
 
         public boolean isTie() {
-            return false;
+            return isTie;
+        }
+        public void setTie(Boolean bool){
+            isTie = bool;
         }
     }
 

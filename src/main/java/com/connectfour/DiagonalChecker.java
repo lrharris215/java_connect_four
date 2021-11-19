@@ -75,4 +75,5 @@ public class DiagonalChecker implements Checker{
     public boolean isTie() {
         return false;
     }
+    public void setTie(Boolean bool){}
 }

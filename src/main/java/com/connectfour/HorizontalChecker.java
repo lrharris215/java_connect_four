@@ -30,4 +30,5 @@ public class HorizontalChecker implements Checker {
     public boolean isTie() {
         return false;
     }
+    public void setTie(Boolean bool){}
 }

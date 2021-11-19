@@ -10,11 +10,15 @@ public class TieChecker implements Checker{
                 }
             }
         }
-        isTie = true;
+        setTie(true);
         return true;
     }
 
     public boolean isTie(){
         return isTie;
+    }
+
+    public void setTie(Boolean bool){
+        isTie = bool;
     }
 }
