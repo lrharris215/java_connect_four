@@ -179,6 +179,10 @@ public class TestClasses {
             int num = (int) Math.floor(Math.random() * 11);
             return num >= 7;
         }
+
+        public boolean isTie() {
+            return false;
+        }
     }
 
 }

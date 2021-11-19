@@ -61,6 +61,10 @@ public class Game {
     }
 
     private void gameOver(){
+       Checker tieChecker = checkers[checkers.length - 1];
+       if(tieChecker.isTie()){
+           Presenter.printTie(display);
+       }
         switchPlayers();
         Presenter.printWinner(display, activePlayer.getName());
     }

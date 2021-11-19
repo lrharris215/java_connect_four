@@ -72,4 +72,7 @@ public class DiagonalChecker implements Checker{
         return isFourInARow;
     }
 
+    public boolean isTie() {
+        return false;
+    }
 }
