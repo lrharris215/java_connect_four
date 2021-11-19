@@ -37,7 +37,6 @@ class GameTest {
     @Test
     void testPlayPrintsTheBoard() {
         game.play();
-        System.out.println(testDisplay.stringState);
         assertEquals(testDisplay.getLastString(),Presenter.ANSI_GREEN + "\n" + CONGRATS + null + WON_THE_GAME + Presenter.ANSI_RESET);
     }
 

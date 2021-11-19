@@ -7,8 +7,7 @@ public class DiagonalChecker implements Checker{
         this.moveValidator = moveValidator;
     }
     public boolean isGameOver(Boardable board) {
-        // need to check diaganols going in both directions.
-        // Only certain spaces are always in a diag (Diag must cross rows 3 and 4).
+        // need to check diagonals going in both directions.
         // Start at bottom, work way up. Only half the board valid in either direction.
 
         return isRightDiagonal(board) || isLeftDiagonal(board);
