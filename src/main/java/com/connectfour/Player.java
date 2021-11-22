@@ -20,7 +20,9 @@ public class Player implements Playerable{
 
     @Override
     public int getInput(Displayable display, Boardable board){
+
         int colChoice = scanner.getColumn();
+
         while(!moveValidator.isValid(board, colChoice)){
             Presenter.printError(display, Constants.VALIDATION_ERROR);
             colChoice = scanner.getColumn();

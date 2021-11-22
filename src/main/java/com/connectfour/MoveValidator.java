@@ -1,6 +1,7 @@
 package com.connectfour;
 
 public class MoveValidator implements Validator{
+
     @Override
     public boolean isValid(Boardable board, int column) {
         // 0 and 6 are the limits of the board.
