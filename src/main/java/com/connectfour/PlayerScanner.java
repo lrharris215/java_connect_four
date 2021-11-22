@@ -9,6 +9,15 @@ public class PlayerScanner implements Scannable{
     }
 
     public int getColumn(){
-        return scanner.nextInt();
+        int col;
+       try{
+           col = scanner.nextInt();
+
+       }catch(Exception e){
+           String garbage = scanner.next();
+            col = 0;
+       }
+
+       return col;
     }
 }
